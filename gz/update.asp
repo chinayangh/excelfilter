@@ -7,7 +7,8 @@ Set xlsconn1 = server.CreateObject("adodb.connection")
 Set xlsrs1 = Server.CreateObject("Adodb.RecordSet")
 Set xlsrs2 = Server.CreateObject("Adodb.RecordSet")
 
-myconn1_Xsl="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\inetpub\wwwroot\excel\gz\file\book2.xls;Extended Properties=Excel 8.0"
+'myconn1_Xsl="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\inetpub\wwwroot\excel\gz\file\book2.xls;Extended Properties=Excel 8.0"
+myconn1_Xsl="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\inetpub\wwwroot\excel\gz\file\book2.xls;Extended Properties=Excel 12.0"
 xlsconn1.open myconn1_Xsl
 
 
