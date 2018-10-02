@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-<title>ÎÄ¼şÉÏ´«ÏµÍ³</title>
+<title>æ–‡ä»¶ä¸Šä¼ ç³»ç»Ÿ</title>
 </head>
 <body>
 	<%
@@ -33,7 +33,7 @@
 .fu_list b {
 	font-size:14px;
 }
-/*fileÈİÆ÷ÑùÊ½*/
+/*fileå®¹å™¨æ ·å¼*/
 a.files {
 	width:90px;
 	height:30px;
@@ -47,7 +47,7 @@ a.files:hover {
 	background-color:#FFFFEE;
 	background-position:0 -30px;
 }
-/*fileÉèÎªÍ¸Ã÷£¬²¢¸²¸ÇÕû¸ö´¥·¢Ãæ*/
+/*fileè®¾ä¸ºé€æ˜ï¼Œå¹¶è¦†ç›–æ•´ä¸ªè§¦å‘é¢*/
 a.files input {
 	margin-left:-350px;
 	font-size:30px;
@@ -55,31 +55,34 @@ a.files input {
 	filter:alpha(opacity=0);
 	opacity:0;
 }
-/*È¡Ïûµã»÷Ê±µÄĞéÏß¿ò*/
+/*å–æ¶ˆç‚¹å‡»æ—¶çš„è™šçº¿æ¡†*/
 a.files, a.files input {
 	outline:none;/*ff*/
 	hide-focus:expression(this.hideFocus=true);/*ie*/
+}
+.btn {
+    cursor: pointer;
 }
 </style>
 <form id="uploadForm" action="file.asp" method="post"   enctype="multipart/form-data">
   <table border="0" cellspacing="1" class="fu_list">
     <thead>
       <tr>
-        <td colspan="2"><b>ÉÏ´«ÎÄ¼ş</b></td>
+        <td colspan="2"><b>ä¸Šä¼ æ–‡ä»¶</b></td>
         
       </tr>
     </thead>
 
     <tbody>
       <tr>
-        <td align="right" width="15%" style="line-height:35px;">Ìí¼ÓÎÄ¼ş£º</td>
+        <td align="right" width="15%" style="line-height:35px;">æ·»åŠ æ–‡ä»¶ï¼š</td>
         <td><a href="javascript:void(0);" class="files" id="idFile"></a> <img id="idProcess" style="display:none;" src="img/loading.gif" /></td>
       </tr>
       <tr>
         <td colspan="2"><table border="0" cellspacing="0">
             <thead>
               <tr>
-                <td>ÎÄ¼şÂ·¾¶</td>
+                <td>æ–‡ä»¶è·¯å¾„</td>
                 <td width="100"></td>
               </tr>
             </thead>
@@ -89,21 +92,21 @@ a.files, a.files input {
           </table></td>
       </tr>
       <tr>
-        <td colspan="2" style="color:gray">ÎÂÜ°ÌáÊ¾£º×î¶à¿ÉÍ¬Ê±ÉÏ´« <b id="idLimit"></b> ¸öÎÄ¼ş£¬Ö»ÔÊĞíÉÏ´« <b id="idExt"></b> ÎÄ¼ş¡£ </td>
+        <td colspan="2" style="color:gray">æ¸©é¦¨æç¤ºï¼šæœ€å¤šå¯åŒæ—¶ä¸Šä¼  <b id="idLimit"></b> ä¸ªæ–‡ä»¶ï¼Œåªå…è®¸ä¸Šä¼  <b id="idExt"></b> æ–‡ä»¶ã€‚ </td>
       </tr>
       <tr>
-        <td colspan="2" align="center" id="idMsg"><input type="button" value="¿ªÊ¼ÉÏ´«" id="idBtnupload"  disabled="disabled" />
+        <td colspan="2" align="center" id="idMsg"><input type="button" value="å¼€å§‹ä¸Šä¼ " id="idBtnupload" class="btn" disabled="disabled" />
           &nbsp;&nbsp;&nbsp;
           
-          <input type="button" value="¿ªÊ¼É¸Ñ¡" id="idBtndel123"  title="ÏÈÉÏ´«ÔÙÉ¸Ñ¡"  onclick="window.location.href = 'update.asp'" />
+          <input type="button" value="å¼€å§‹ç­›é€‰" id="idBtndel123"  title="å…ˆä¸Šä¼ å†ç­›é€‰" class="btn" onclick="window.location.href = 'update.asp'" />
 
         </td>
         
       </tr>
-      <tr><td colspan="2" style="color: red">ÈçÉÏ´«Êı¾İÁ¿±È½Ï´ó£¬µ¼ÈëÊ±ºòÇëÄÍĞÄµÈ´ıÒ³Ãæ·µ»Ø½á¹û£¬ÇĞ¼É·´¸´Ë¢ĞÂÒ³Ãæ</td></tr>
+      <tr><td colspan="2" style="color: red">å¦‚ä¸Šä¼ æ•°æ®é‡æ¯”è¾ƒå¤§ï¼Œå¯¼å…¥æ—¶å€™è¯·è€å¿ƒç­‰å¾…é¡µé¢è¿”å›ç»“æœï¼Œåˆ‡å¿Œåå¤åˆ·æ–°é¡µé¢</td></tr>
     </tbody>
   </table>
-<div style="margin-top:-18%;float:right"><a href="logout.asp">×¢Ïú</a></div>
+<div style="margin-top:-18%;float:right"><a href="logout.asp">æ³¨é”€</a></div>
 </form>
 
 
@@ -140,15 +143,15 @@ var Each = function(list, fun){
 	for (var i = 0, len = list.length; i < len; i++) { fun(list[i], i); }
 };
 
-//ÎÄ¼şÉÏ´«Àà
+//æ–‡ä»¶ä¸Šä¼ ç±»
 var FileUpload = Class.create();
 FileUpload.prototype = {
-  //±íµ¥¶ÔÏó£¬ÎÄ¼ş¿Ø¼ş´æ·Å¿Õ¼ä
+  //è¡¨å•å¯¹è±¡ï¼Œæ–‡ä»¶æ§ä»¶å­˜æ”¾ç©ºé—´
   initialize: function(form, folder, options) {
 	
-	this.Form = $(form);//±íµ¥
-	this.Folder = $(folder);//ÎÄ¼ş¿Ø¼ş´æ·Å¿Õ¼ä
-	this.Files = [];//ÎÄ¼ş¼¯ºÏ
+	this.Form = $(form);//è¡¨å•
+	this.Folder = $(folder);//æ–‡ä»¶æ§ä»¶å­˜æ”¾ç©ºé—´
+	this.Files = [];//æ–‡ä»¶é›†åˆ
 	
 	this.SetOptions(options);
 	
@@ -170,141 +173,141 @@ FileUpload.prototype = {
 	this.onIni = this.options.onIni;
 	
 	if(!this._FrameName){
-		//ÎªÃ¿¸öÊµÀı´´½¨²»Í¬µÄiframe
+		//ä¸ºæ¯ä¸ªå®ä¾‹åˆ›å»ºä¸åŒçš„iframe
 		this._FrameName = "uploadFrame_" + Math.floor(Math.random() * 1000);
-		//ie²»ÄÜĞŞ¸ÄiframeµÄname
+		//ieä¸èƒ½ä¿®æ”¹iframeçš„name
 		var oFrame = isIE ? document.createElement("<iframe name=\"" + this._FrameName + "\">") : document.createElement("iframe");
-		//ÎªffÉèÖÃname
+		//ä¸ºffè®¾ç½®name
 		oFrame.name = this._FrameName;
 		oFrame.style.display = "none";
-		//ÔÚieÎÄµµÎ´¼ÓÔØÍêÓÃappendChild»á±¨´í
+		//åœ¨ieæ–‡æ¡£æœªåŠ è½½å®Œç”¨appendChildä¼šæŠ¥é”™
 		document.body.insertBefore(oFrame, document.body.childNodes[0]);
 	}
 	
-	//ÉèÖÃformÊôĞÔ£¬¹Ø¼üÊÇtargetÒªÖ¸Ïòiframe
+	//è®¾ç½®formå±æ€§ï¼Œå…³é”®æ˜¯targetè¦æŒ‡å‘iframe
 	this.Form.target = this._FrameName;
 	this.Form.method = "post";
-	//×¢ÒâieµÄformÃ»ÓĞenctypeÊôĞÔ£¬ÒªÓÃencoding
+	//æ³¨æ„ieçš„formæ²¡æœ‰enctypeå±æ€§ï¼Œè¦ç”¨encoding
 	this.Form.encoding = "multipart/form-data";
 
-	//ÕûÀíÒ»´Î
+	//æ•´ç†ä¸€æ¬¡
 	this.Ini();
   },
-  //ÉèÖÃÄ¬ÈÏÊôĞÔ
+  //è®¾ç½®é»˜è®¤å±æ€§
   SetOptions: function(options) {
-    this.options = {//Ä¬ÈÏÖµ
-		FileName:	"",//ÎÄ¼şÉÏ´«¿Ø¼şµÄname£¬ÅäºÏºóÌ¨Ê¹ÓÃ
-		RanName:	false,//ÎÄ¼şÉÏ´«µÄnameÊÇ·ñËæ»úÃû(Õâ¸öÊÇÓÃÓÚaspµÄÎŞ×é¼şÉÏ´«)
-		FrameName:	"",//iframeµÄname£¬Òª×Ô¶¨ÒåiframeµÄ»°ÕâÀïÉèÖÃname
-		onIniFile:	function(){},//ÕûÀíÎÄ¼şÊ±Ö´ĞĞ(ÆäÖĞ²ÎÊıÊÇfile¶ÔÏó)
-		onEmpty:	function(){},//ÎÄ¼ş¿ÕÖµÊ±Ö´ĞĞ
-		Limit:		0,//ÎÄ¼şÊıÏŞÖÆ£¬0Îª²»ÏŞÖÆ
-		onLimite:	function(){},//³¬¹ıÎÄ¼şÊıÏŞÖÆÊ±Ö´ĞĞ
-		Distinct:	true,//ÊÇ·ñ²»ÔÊĞíÏàÍ¬ÎÄ¼ş
-		onSame:		function(){},//ÓĞÏàÍ¬ÎÄ¼şÊ±Ö´ĞĞ
-		ExtIn:		[],//ÔÊĞíºó×ºÃû
-		onNotExtIn:	function(){},//²»ÊÇÔÊĞíºó×ºÃûÊ±Ö´ĞĞ
-		ExtOut:		[],//½ûÖ¹ºó×ºÃû£¬µ±ÉèÖÃÁËExtInÔòExtOutÎŞĞ§
-		onExtOut:	function(){},//ÊÇ½ûÖ¹ºó×ºÃûÊ±Ö´ĞĞ
-		onFail:		function(){},//ÎÄ¼ş²»Í¨¹ı¼ì²âÊ±Ö´ĞĞ(ÆäÖĞ²ÎÊıÊÇfile¶ÔÏó)
-		onIni:		function(){}//ÖØÖÃÊ±Ö´ĞĞ
+    this.options = {//é»˜è®¤å€¼
+		FileName:	"",//æ–‡ä»¶ä¸Šä¼ æ§ä»¶çš„nameï¼Œé…åˆåå°ä½¿ç”¨
+		RanName:	false,//æ–‡ä»¶ä¸Šä¼ çš„nameæ˜¯å¦éšæœºå(è¿™ä¸ªæ˜¯ç”¨äºaspçš„æ— ç»„ä»¶ä¸Šä¼ )
+		FrameName:	"",//iframeçš„nameï¼Œè¦è‡ªå®šä¹‰iframeçš„è¯è¿™é‡Œè®¾ç½®name
+		onIniFile:	function(){},//æ•´ç†æ–‡ä»¶æ—¶æ‰§è¡Œ(å…¶ä¸­å‚æ•°æ˜¯fileå¯¹è±¡)
+		onEmpty:	function(){},//æ–‡ä»¶ç©ºå€¼æ—¶æ‰§è¡Œ
+		Limit:		0,//æ–‡ä»¶æ•°é™åˆ¶ï¼Œ0ä¸ºä¸é™åˆ¶
+		onLimite:	function(){},//è¶…è¿‡æ–‡ä»¶æ•°é™åˆ¶æ—¶æ‰§è¡Œ
+		Distinct:	true,//æ˜¯å¦ä¸å…è®¸ç›¸åŒæ–‡ä»¶
+		onSame:		function(){},//æœ‰ç›¸åŒæ–‡ä»¶æ—¶æ‰§è¡Œ
+		ExtIn:		[],//å…è®¸åç¼€å
+		onNotExtIn:	function(){},//ä¸æ˜¯å…è®¸åç¼€åæ—¶æ‰§è¡Œ
+		ExtOut:		[],//ç¦æ­¢åç¼€åï¼Œå½“è®¾ç½®äº†ExtInåˆ™ExtOutæ— æ•ˆ
+		onExtOut:	function(){},//æ˜¯ç¦æ­¢åç¼€åæ—¶æ‰§è¡Œ
+		onFail:		function(){},//æ–‡ä»¶ä¸é€šè¿‡æ£€æµ‹æ—¶æ‰§è¡Œ(å…¶ä¸­å‚æ•°æ˜¯fileå¯¹è±¡)
+		onIni:		function(){}//é‡ç½®æ—¶æ‰§è¡Œ
     };
     Extend(this.options, options || {});
   },
-  //ÕûÀí¿Õ¼ä
+  //æ•´ç†ç©ºé—´
   Ini: function() {
-	//ÕûÀíÎÄ¼ş¼¯ºÏ
+	//æ•´ç†æ–‡ä»¶é›†åˆ
 	this.Files = [];
-	//ÕûÀíÎÄ¼ş¿Õ¼ä£¬°ÑÓĞÖµµÄfile·ÅÈëÎÄ¼ş¼¯ºÏ
+	//æ•´ç†æ–‡ä»¶ç©ºé—´ï¼ŒæŠŠæœ‰å€¼çš„fileæ”¾å…¥æ–‡ä»¶é›†åˆ
 	Each(this.Folder.getElementsByTagName("input"), Bind(this, function(o){
 		if(o.type == "file"){ o.value && this.Files.push(o); this.onIniFile(o); }
 	}))
-	//²åÈëÒ»¸öĞÂµÄfile
+	//æ’å…¥ä¸€ä¸ªæ–°çš„file
 	var file = document.createElement("input");
 	file.name = this.FileName; file.type = "file"; file.onchange = Bind(this, function(){ this.Check(file); this.Ini(); });
-	//aspÓÃupload_5xsoftÎŞ×é¼şÉÏ´«Ê±ĞèÒªÉèÖÃ²»Í¬µÄname
+	//aspç”¨upload_5xsoftæ— ç»„ä»¶ä¸Šä¼ æ—¶éœ€è¦è®¾ç½®ä¸åŒçš„name
 	if(this.RanName){ file.name += "_file" + Math.floor(Math.random() * 1000); }
 	this.Folder.appendChild(file);
-	//Ö´ĞĞ¸½¼Ó³ÌĞò
+	//æ‰§è¡Œé™„åŠ ç¨‹åº
 	this.onIni();
   },
-  //¼ì²âfile¶ÔÏó
+  //æ£€æµ‹fileå¯¹è±¡
   Check: function(file) {
-	//¼ì²â±äÁ¿
+	//æ£€æµ‹å˜é‡
 	var bCheck = true;
-	//¿ÕÖµ¡¢ÎÄ¼şÊıÏŞÖÆ¡¢ºó×ºÃû¡¢ÏàÍ¬ÎÄ¼ş¼ì²â
+	//ç©ºå€¼ã€æ–‡ä»¶æ•°é™åˆ¶ã€åç¼€åã€ç›¸åŒæ–‡ä»¶æ£€æµ‹
 	if(!file.value){
 		bCheck = false; this.onEmpty();
 	} else if(this.Limit && this.Files.length >= this.Limit){
 		bCheck = false; this.onLimite();
 	} else if(!!this.ExtIn.length && !RegExp("\.(" + this.ExtIn.join("|") + ")$", "i").test(file.value)){
-		//¼ì²âÊÇ·ñÔÊĞíºó×ºÃû
+		//æ£€æµ‹æ˜¯å¦å…è®¸åç¼€å
 		bCheck = false; this.onNotExtIn();
 	} else if(!!this.ExtOut.length && RegExp("\.(" + this.ExtOut.join("|") + ")$", "i").test(file.value)) {
-		//¼ì²âÊÇ·ñ½ûÖ¹ºó×ºÃû
+		//æ£€æµ‹æ˜¯å¦ç¦æ­¢åç¼€å
 		bCheck = false; this.onExtOut();
 	} else if(!!this.Distinct) {
 		Each(this.Files, function(o){ if(o.value == file.value){ bCheck = false; } })
 		if(!bCheck){ this.onSame(); }
 	}
-	//Ã»ÓĞÍ¨¹ı¼ì²â
+	//æ²¡æœ‰é€šè¿‡æ£€æµ‹
 	!bCheck && this.onFail(file);
   },
-  //É¾³ıÖ¸¶¨file
+  //åˆ é™¤æŒ‡å®šfile
   Delete: function(file) {
-	//ÒÆ³ıÖ¸¶¨file
+	//ç§»é™¤æŒ‡å®šfile
 	this.Folder.removeChild(file); this.Ini();
   },
-  //É¾³ıÈ«²¿file
+  //åˆ é™¤å…¨éƒ¨file
   Clear: function() {
-	//Çå¿ÕÎÄ¼ş¿Õ¼ä
+	//æ¸…ç©ºæ–‡ä»¶ç©ºé—´
 	Each(this.Files, Bind(this, function(o){ this.Folder.removeChild(o); })); this.Ini();
   }
 }
 
 var fu = new FileUpload("uploadForm", "idFile", { Limit: 1, ExtIn: ["xls"], RanName: true,
 	onIniFile: function(file){ file.value ? file.style.display = "none" : this.Folder.removeChild(file); },
-	onEmpty: function(){ alert("ÇëÑ¡ÔñÒ»¸öÎÄ¼ş"); },
-	onLimite: function(){ alert("³¬¹ıÉÏ´«ÏŞÖÆ"); },
-	onSame: function(){ alert("ÒÑ¾­ÓĞÏàÍ¬ÎÄ¼ş"); },
-	onNotExtIn:	function(){ alert("Ö»ÔÊĞíÉÏ´«" + this.ExtIn.join("£¬") + "ÎÄ¼ş"); },
+	onEmpty: function(){ alert("è¯·é€‰æ‹©ä¸€ä¸ªæ–‡ä»¶"); },
+	onLimite: function(){ alert("è¶…è¿‡ä¸Šä¼ é™åˆ¶"); },
+	onSame: function(){ alert("å·²ç»æœ‰ç›¸åŒæ–‡ä»¶"); },
+	onNotExtIn:	function(){ alert("åªå…è®¸ä¸Šä¼ " + this.ExtIn.join("ï¼Œ") + "æ–‡ä»¶"); },
 	onFail: function(file){ this.Folder.removeChild(file); },
 	onIni: function(){
-		//ÏÔÊ¾ÎÄ¼şÁĞ±í
+		//æ˜¾ç¤ºæ–‡ä»¶åˆ—è¡¨
 		var arrRows = [];
 		if(this.Files.length){
 			var oThis = this;
 			Each(this.Files, function(o){
-				var a = document.createElement("a"); a.innerHTML = "È¡Ïû"; a.href = "javascript:void(0);";
+				var a = document.createElement("a"); a.innerHTML = "å–æ¶ˆ"; a.href = "javascript:void(0);";
 				a.onclick = function(){ oThis.Delete(o); return false; };
 				arrRows.push([o.value, a]);
 			});
-		} else { arrRows.push(["<font color='gray'>Ã»ÓĞÌí¼ÓÎÄ¼ş</font>", "&nbsp;"]); }
+		} else { arrRows.push(["<font color='gray'>æ²¡æœ‰æ·»åŠ æ–‡ä»¶</font>", "&nbsp;"]); }
 		AddList(arrRows);
-		//ÉèÖÃ°´Å¥
+		//è®¾ç½®æŒ‰é’®
 		//$("idBtnupload").disabled = $("idBtndel").disabled = this.Files.length <= 0;
 		$("idBtnupload").disabled  = this.Files.length <= 0;
 	}
 });
 
 $("idBtnupload").onclick = function(){
-	//ÏÔÊ¾ÎÄ¼şÁĞ±í
+	//æ˜¾ç¤ºæ–‡ä»¶åˆ—è¡¨
 	var arrRows = [];
 	Each(fu.Files, function(o){ arrRows.push([o.value, "&nbsp;"]); });
 	AddList(arrRows);
 	
 	fu.Folder.style.display = "none";
 	$("idProcess").style.display = "";
-	$("idMsg").innerHTML = "ÕıÔÚÉÏ´«ÎÄ¼şÖĞ£¬ÇëÉÔºò¡­¡­<br />ÓĞ¿ÉÄÜÒòÎªÍøÂçÎÊÌâ£¬³öÏÖ³ÌĞò³¤Ê±¼äÎŞÏìÓ¦£¬Çëµã»÷¡°<a href='?'><font color='red'>È¡Ïû</font></a>¡±ÖØĞÂÉÏ´«ÎÄ¼ş";
+	$("idMsg").innerHTML = "æ­£åœ¨ä¸Šä¼ æ–‡ä»¶ä¸­ï¼Œè¯·ç¨å€™â€¦â€¦<br />æœ‰å¯èƒ½å› ä¸ºç½‘ç»œé—®é¢˜ï¼Œå‡ºç°ç¨‹åºé•¿æ—¶é—´æ— å“åº”ï¼Œè¯·ç‚¹å‡»â€œ<a href='?'><font color='red'>å–æ¶ˆ</font></a>â€é‡æ–°ä¸Šä¼ æ–‡ä»¶";
 	
 	fu.Form.submit();
 }
 
-//ÓÃÀ´Ìí¼ÓÎÄ¼şÁĞ±íµÄº¯Êı
+//ç”¨æ¥æ·»åŠ æ–‡ä»¶åˆ—è¡¨çš„å‡½æ•°
 function AddList(rows){
-	//¸ù¾İÊı×éÀ´Ìí¼ÓÁĞ±í
+	//æ ¹æ®æ•°ç»„æ¥æ·»åŠ åˆ—è¡¨
 	var FileList = $("idFileList"), oFragment = document.createDocumentFragment();
-	//ÓÃÎÄµµËéÆ¬±£´æÁĞ±í
+	//ç”¨æ–‡æ¡£ç¢ç‰‡ä¿å­˜åˆ—è¡¨
 	Each(rows, function(cells){
 		var row = document.createElement("tr");
 		Each(cells, function(o){
@@ -314,7 +317,7 @@ function AddList(rows){
 		});
 		oFragment.appendChild(row);
 	})
-	//ieµÄtable²»Ö§³ÖinnerHTMLËùÒÔÕâÑùÇå¿Õtable
+	//ieçš„tableä¸æ”¯æŒinnerHTMLæ‰€ä»¥è¿™æ ·æ¸…ç©ºtable
 	while(FileList.hasChildNodes()){ FileList.removeChild(FileList.firstChild); }
 	FileList.appendChild(oFragment);
 }
@@ -322,11 +325,11 @@ function AddList(rows){
 
 $("idLimit").innerHTML = fu.Limit;
 
-$("idExt").innerHTML = fu.ExtIn.join("£¬");
+$("idExt").innerHTML = fu.ExtIn.join("ï¼Œ");
 
 $("idBtndel").onclick = function(){ fu.Clear(); }
 
-//ÔÚºóÌ¨Í¨¹ıwindow.parentÀ´·ÃÎÊÖ÷Ò³ÃæµÄº¯Êı
+//åœ¨åå°é€šè¿‡window.parentæ¥è®¿é—®ä¸»é¡µé¢çš„å‡½æ•°
 function Finish(msg){ alert(msg); location.href = location.href; }
 
 </script>
