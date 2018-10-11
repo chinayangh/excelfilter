@@ -8,18 +8,18 @@
 	conn.open myconn1_Xsl
 
 
-	'--¼ÙÉèÄãÏëÈÃÉú³ÉµÄEXCELÎÄ¼ş×öÈçÏÂµÄ´æ·Å
+	'--å‡è®¾ä½ æƒ³è®©ç”Ÿæˆçš„EXCELæ–‡ä»¶åšå¦‚ä¸‹çš„å­˜æ”¾
 	Path="file/"
 	filename = Server.MapPath(path&"020.xls")
-	'--Èç¹ûÔ­À´µÄEXCELÎÄ¼ş´æÔÚµÄ»°É¾³ıËü
+	'--å¦‚æœåŸæ¥çš„EXCELæ–‡ä»¶å­˜åœ¨çš„è¯åˆ é™¤å®ƒ
 	if fs.FileExists(filename) then
 	fs.DeleteFile(filename)
 	end if
-	'--´´½¨EXCELÎÄ¼ş
+	'--åˆ›å»ºEXCELæ–‡ä»¶
 	set myfile = fs.CreateTextFile(filename,true)
 
 	 
-	sql = "select '¹ãÖİ' as ·ÖĞ£,Ñ§Ô±uid,Ñ§Ô±Ãû³Æ,°à¼¶Ãû³Æ,¿Î´Î,¿Î³ÌÈÕÆÚ,ÉÏ¿ÎÊ±¼ä,ÏÂ¿ÎÊ±¼ä,½ÌÊ¦Ãû³Æ,count(½ÌÊ¦Ãû³Æ) as num,½ÌÑ§µã,½ÌÊÒ,µç»°1,µç»°2 from [Sheet0$]   where °à¼¶Ãû³Æ not like '¶ÌÆÚ°à%' and °à¼¶Ãû³Æ not like '»î¶¯Àà%' and °à¼¶Ãû³Æ not like 'XÊÔÀà%' and °à¼¶Ãû³Æ not like 'ÕïXÀà%' and °à¼¶Ãû³Æ not like '%¸ßÖĞ%' and °à¼¶Ãû³Æ not like '%Ë«X%' and °à¼¶Ãû³Æ not like '%Ğ¡Ñ§ÎåÄê¼¶X%' and °à¼¶Ãû³Æ not like '%ĞËÈ¤Ğ¡×é%' and ÉÏ¿ÎÊ±¼ä like '%10:30%' or ÉÏ¿ÎÊ±¼ä like '%08:00%' or ÉÏ¿ÎÊ±¼ä like '%08:30%' or ÉÏ¿ÎÊ±¼ä like '%12:00%' or ÉÏ¿ÎÊ±¼ä like '%13:20%' or ÉÏ¿ÎÊ±¼ä like '%14:50%' or ÉÏ¿ÎÊ±¼ä like '%15:50%' or ÉÏ¿ÎÊ±¼ä like '%18:00%' or ÉÏ¿ÎÊ±¼ä like '%18:30%' group by Ñ§Ô±uid,Ñ§Ô±Ãû³Æ,°à¼¶Ãû³Æ,¿Î´Î,¿Î³ÌÈÕÆÚ,ÉÏ¿ÎÊ±¼ä,ÏÂ¿ÎÊ±¼ä,½ÌÊ¦Ãû³Æ,½ÌÑ§µã,½ÌÊÒ,µç»°1,µç»°2 order by ½ÌÊ¦Ãû³Æ "
+	sql = "select 'å¹¿å·' as åˆ†æ ¡,å­¦å‘˜uid,å­¦å‘˜åç§°,ç­çº§åç§°,è¯¾æ¬¡,è¯¾ç¨‹æ—¥æœŸ,ä¸Šè¯¾æ—¶é—´,ä¸‹è¯¾æ—¶é—´,æ•™å¸ˆåç§°,count(æ•™å¸ˆåç§°) as num,æ•™å­¦ç‚¹,æ•™å®¤,ç”µè¯1,ç”µè¯2 from [Sheet0$]   where ç­çº§åç§° not like 'çŸ­æœŸç­%' and ç­çº§åç§° not like 'æ´»åŠ¨ç±»%' and ç­çº§åç§° not like 'Xè¯•ç±»%' and ç­çº§åç§° not like 'è¯ŠXç±»%' and ç­çº§åç§° not like '%é«˜ä¸­%' and ç­çº§åç§° not like '%åŒX%' and ç­çº§åç§° not like '%å°å­¦äº”å¹´çº§X%' and ç­çº§åç§° not like '%å…´è¶£å°ç»„%' and (ä¸Šè¯¾æ—¶é—´ like '%10:30%' or ä¸Šè¯¾æ—¶é—´ like '%08:00%' or ä¸Šè¯¾æ—¶é—´ like '%08:30%' or ä¸Šè¯¾æ—¶é—´ like '%12:00%' or ä¸Šè¯¾æ—¶é—´ like '%13:20%' or ä¸Šè¯¾æ—¶é—´ like '%14:50%' or ä¸Šè¯¾æ—¶é—´ like '%15:50%' or ä¸Šè¯¾æ—¶é—´ like '%18:00%' or ä¸Šè¯¾æ—¶é—´ like '%18:30%') group by å­¦å‘˜uid,å­¦å‘˜åç§°,ç­çº§åç§°,è¯¾æ¬¡,è¯¾ç¨‹æ—¥æœŸ,ä¸Šè¯¾æ—¶é—´,ä¸‹è¯¾æ—¶é—´,æ•™å¸ˆåç§°,æ•™å­¦ç‚¹,æ•™å®¤,ç”µè¯1,ç”µè¯2 order by æ•™å¸ˆåç§° "
 	
 	
 	rstData.open sql,conn,1,1
@@ -33,7 +33,7 @@
 	'response.write strLine
 	Next
 	 
-	'--½«±íµÄÁĞÃûÏÈĞ´ÈëEXCEL
+	'--å°†è¡¨çš„åˆ—åå…ˆå†™å…¥EXCEL
 	myfile.writeline strLine
 	 
 	Do while Not rstData.EOF
@@ -48,7 +48,7 @@
 	loop
 	 
 	end if
-	Response.Write("Éú³ÉEXCELÎÄ¼ş³É¹¦£¬µã»÷<a href=./file/020.xls rel='external nofollow' target=_blank>ÏÂÔØ")
+	Response.Write("ç”ŸæˆEXCELæ–‡ä»¶æˆåŠŸï¼Œç‚¹å‡»<a href=./file/020.xls rel='external nofollow' target=_blank>ä¸‹è½½")
 	rstData.Close
 	set rstData = nothing
 	Conn.Close
