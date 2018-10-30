@@ -11,7 +11,7 @@ myconn1_Xsl="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\inetpub\wwwroot\exc
 xlsconn1.open myconn1_Xsl
 
 
-sql = "select '广州' as 分校,学员uid,学员名称,班级名称,课次,课程日期,上课时间,下课时间,教师名称,count(教师名称) as num,教学点,教室,母亲电话,父亲电话 from [Sheet0$]   where 班级名称 not like '短期班%' and 班级名称 not like '活动类%' and 班级名称 not like '考试类%' and 班级名称 not like '诊断类%' and 班级名称 not like '%高中%' and 班级名称 not like '%双师%' and 班级名称 not like '%小学五年级语文%' and 班级名称 not like '%兴趣小组%' group by 学员uid,学员名称,班级名称,课次,课程日期,上课时间,下课时间,教师名称,教学点,教室,母亲电话,父亲电话 having count(教师名称) order by 教师名称 "
+sql = "select '广州' as 分校,学员uid,学员名称,班级名称,课次,课程日期,上课时间,下课时间,教师名称,count(教师名称) as num,教学点,教室,母亲X,父亲X from [Sheet0$]   where 班级名称 not like '短期X%' and 班级名称 not like '活X类%' and 班级名称 not like 'X类%' and 班级名称 not like 'X类%' and 班级名称 not like '%高中%' and 班级名称 not like '%X师%' and 班级名称 not like '%X语文%' and 班级名称 not like '%兴趣X%'  order by 教师名称 "
 
 sql2="select 教师名称,count(1) as num2 from [Sheet0$] group by 教师名称"
 
