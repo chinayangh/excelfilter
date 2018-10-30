@@ -40,7 +40,7 @@ i=0
 do While Not xlsrs1.EOF
 	i=i+1
 	a=xlsrs1("班级名称")
-	b=xlsrs1("学员uid")
+	b=xlsrs1("学员X")
 	c=xlsrs1("学员名称")
 	d=xlsrs1("课次")
 	e=xlsrs1("课程日期")
@@ -49,8 +49,8 @@ do While Not xlsrs1.EOF
 	h=xlsrs1("教师名称")
 	j=xlsrs1("教学点")
 	k=xlsrs1("教室")
-	m=xlsrs1("母亲电话")
-	n=xlsrs1("父亲电话")
+	m=xlsrs1("母亲X")
+	n=xlsrs1("父亲X")
 	p=xlsrs1("分校")
 	no=xlsrs1("num")
 	
