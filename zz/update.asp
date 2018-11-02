@@ -22,7 +22,7 @@ myconn1_Xsl="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\inetpub\wwwroot\ex
 xlsconn1.open myconn1_Xsl
 
 
-sql = "select '广州' as 分校,学员uid,学员名称,班级名称,课次,课程日期,上课时间,下课时间,教师名称,count(教师名称) as num,教学点,教室,母亲电话,父亲电话 from [Sheet0$]   where 班级名称 not like '短期班%' and 班级名称 not like '活动类%' and 班级名称 not like '考试类%' and 班级名称 not like '诊断类%' and 班级名称 not like '%高中%' and 班级名称 not like '%双师%' and 班级名称 not like '%小学五年级语文%' and 班级名称 not like '%兴趣小组%' and 上课时间 like '%10:30%' or 上课时间 like '%08:00%' or 上课时间 like '%08:30%' or 上课时间 like '%12:00%' or 上课时间 like '%13:20%' or 上课时间 like '%14:50%' or 上课时间 like '%15:50%' or 上课时间 like '%18:00%' or 上课时间 like '%18:30%' group by 学员uid,学员名称,班级名称,课次,课程日期,上课时间,下课时间,教师名称,教学点,教室,母亲电话,父亲电话  order by 教师名称 "
+sql = "select '广州' as 分校,学员X,学员名称,班级名称,课次,课程日期,上课时间,下课时间,教师名称,count(教师名称) as num,教学点,教室,母亲X,父亲X from [Sheet0$]   where 班级名称 not like '短X班%' and 班级名称 not like 'X类%' and 班级名称 not like 'X类%' and 班级名称 not like 'X类%' and 班级名称 not like '%高中%' and 班级名称 not like '%X师%' and 班级名称 not like '%小学X语文%' and 班级名称 not like '%X小组%' and 上课时间 like '%10:30%' or 上课时间 like '%08:00%' or 上课时间 like '%08:30%' or 上课时间 like '%12:00%' or 上课时间 like '%13:20%' or 上课时间 like '%14:50%' or 上课时间 like '%15:50%' or 上课时间 like '%18:00%' or 上课时间 like '%18:30%'  order by 教师名称 "
 
 sql2="select 教师名称,count(1) as num2 from [Sheet0$] group by 教师名称"
 
@@ -75,7 +75,7 @@ end if
 'do While Not xlsrs1.EOF
 '	i=i+1
 '	a=xlsrs1("班级名称")
-'	b=xlsrs1("学员uid")
+'	b=xlsrs1("学员X")
 '	c=xlsrs1("学员名称")
 '	d=xlsrs1("课次")
 '	e=xlsrs1("课程日期")
@@ -84,8 +84,8 @@ end if
 '	h=xlsrs1("教师名称")
 '	j=xlsrs1("教学点")
 '	k=xlsrs1("教室")
-'	m=xlsrs1("母亲电话")
-'	n=xlsrs1("父亲电话")
+'	m=xlsrs1("母亲X")
+'	n=xlsrs1("父亲X")
 '	p=xlsrs1("分校")
 '	no=xlsrs1("num")
 '	
