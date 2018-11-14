@@ -9,7 +9,7 @@ Set xlsrs1 = Server.CreateObject("Adodb.RecordSet")
 myconn1_Xsl="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\inetpub\wwwroot\excel\sz\file\book2.xls;Extended Properties=Excel 8.0"
 xlsconn1.open myconn1_Xsl
 
-sql = "select '深圳' as 分校,学员uid,学员名称,班级名称,课次,课程日期,上课时间,下课时间,教师名称,教学点,教室,母亲电话,父亲电话 from [Sheet0$] where 班级名称 not like '短期班%' and 班级名称 not like '活动类%' and 班级名称 not like '考试类%' and 班级名称 not like '诊断类%' and 班级名称 not like '%高中%' and 班级名称 not like '%双师%' and 班级名称 not like '%语文%' and 班级名称 not like '%大讲堂%' and 教学点 not like '%雅仕荔景%' and 教学点 not like '%东海坊%' and 教学点 not like '%云尚公馆%' and 教学点 not like '%世纪汇%'"
+sql = "select '深圳' as 分校,学员X,学员名称,班级名称,课次,课程日期,上课时间,下课时间,教师名称,教学点,教室,母亲X,父亲X from [Sheet0$] where 班级名称 not like '短X班%' and 班级名称 not like '活动X%' and 班级名称 not like 'X试类%' and 班级名称 not like 'X断类%' and 班级名称 not like '%高中%' and 班级名称 not like '%双X%' and 班级名称 not like '%语文%' and 班级名称 not like '%大X堂%' and 教学点 not like '%雅仕X%' and 教学点 not like '%东X坊%' and 教学点 not like '%云X馆%' and 教学点 not like '%世X汇%'"
 
 xlsconn1.Execute sql
 
@@ -32,7 +32,7 @@ i=0
 do While Not xlsrs1.EOF
 	i=i+1
 	a=xlsrs1("班级名称")
-	b=xlsrs1("学员uid")
+	b=xlsrs1("学员X")
 	c=xlsrs1("学员名称")
 	d=xlsrs1("课次")
 	e=xlsrs1("课程日期")
@@ -41,8 +41,8 @@ do While Not xlsrs1.EOF
 	h=xlsrs1("教师名称")
 	j=xlsrs1("教学点")
 	k=xlsrs1("教室")
-	m=xlsrs1("母亲电话")
-	n=xlsrs1("父亲电话")
+	m=xlsrs1("母亲X")
+	n=xlsrs1("父亲X")
 	p=xlsrs1("分校")
 	response.write  p & ";" & b & ";" & c & ";" & a & ";" & d & ";" & e & ";" & f & ";" & g & ";" & h & ";" & j & ";" & k & ";" & m & ";" & n & "<br>" 
 xlsrs1.MoveNext
